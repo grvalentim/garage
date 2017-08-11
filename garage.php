@@ -38,7 +38,7 @@
 			]
 		];
 	
-	$rand_garage = randGarage($garage);
+	$rand_garage = randGarage($garage); //function
 	function randGarage($array) {
 			$arr = [];
 			$city = array_rand($array); //city
