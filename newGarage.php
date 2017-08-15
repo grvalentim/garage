@@ -2,48 +2,39 @@
 
 
 // users
-
 $users = [];
-  $users['Names'] = ['0' => ['John', 'Jim', 'Aleks', 'Barak'],
-                  '1' => ['Marry', 'Helen', 'Kate', 'Ann']];
+  $users['Names'] = ['males' => ['John', 'Jim', 'Aleks', 'Barak'],
+                     'females' => ['Marry', 'Helen', 'Kate', 'Ann']];
   $users['Surnames'] = ['Smith', 'Tramp', 'Adams', 'Black'];
   $users['Gender'] = ['mr', 'mrs'];
 
 // cars
-
-$cars =
-    array('Mersedes' => array('SLS' => array('color' => 'red', 'year' => '1998'),
-                              'CLS' => array('color' => 'black', 'year' => '2001')),
-          'BMW' => array('M3' => array('color' => 'yellow', 'year' => '2014'),
-                         'M5' => array('color' => 'silver', 'year' => '2012')),
-          'Opel' => array('Omega' => array('color' => 'pink', 'year' => '2011'),
-                          'Astra' => array('color' => 'green', 'year' => '2002')));
+$cars = [];
+    $cars ['Mersedes'] = ['SLS' => ['color' => 'red', 'year' => '1998'],
+                          'CLS' => ['color' => 'black', 'year' => '2001']];
+    $cars ['BMW'] = ['M3' => ['color' => 'yellow', 'year' => '2014'],
+                     'M5' => ['color' => 'silver', 'year' => '2012']];
+    $cars ['Opel'] = ['Omega' => ['color' => 'pink', 'year' => '2011'],
+                      'Astra' => ['color' => 'green', 'year' => '2002']];
 
 //garage
-
 $garage = [
-			'Kharkiv' => [
-				'metal' => [['grey', 1], ['yellow', 2], ['black', 3]],
-				'bricks' => [['grey', 1], ['yellow', 2], ['black', 3]]
+			'Kharkiv' => ['metal' => [['grey', 1], ['yellow', 2], ['black', 3]],
+				            'bricks' => [['grey', 1], ['yellow', 2], ['black', 3]]
 			],
-			'Kiev' =>  [
-				'metal' => [['grey', 1], ['yellow', 2], ['black', 3]],
-				'bricks' => [
-					['grey', 1], ['yellow', 2], ['black', 3]]
+			'Kiev' =>  ['metal' => [['grey', 1], ['yellow', 2], ['black', 3]],
+				          'bricks' => [['grey', 1], ['yellow', 2], ['black', 3]]
 			],
-			'Poltava' => [
-				'metal' => [
-					['grey', 1], ['yellow', 2], ['black', 3]],
-				'bricks' => [
-					['grey', 3], ['yellow', 2], ['black', 1]]
+			'Poltava' => ['metal' => [['grey', 1], ['yellow', 2], ['black', 3]],
+				            'bricks' => [['grey', 3], ['yellow', 2], ['black', 1]]
 			]
 		];
 
 function owner($users){
   $gender = array_rand(array_flip($users['Gender']));
   if ($gender == 'mr') {
-	   $names = array_rand(array_flip($users['Names']['0']));
-   } else $names = array_rand(array_flip($users['Names']['1']));
+	   $names = array_rand(array_flip($users['Names']['males']));
+   } else $names = array_rand(array_flip($users['Names']['females']));
    $surnames = array_rand(array_flip($users['Surnames']));
 
   return 'Dear  ' . $gender. ' '. $names . ' ' . $surnames . '!';
