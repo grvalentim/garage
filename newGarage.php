@@ -33,8 +33,8 @@ $garage = [
 function owner($users){
   $gender = array_rand(array_flip($users['Gender']));
   if ($gender == 'mr') {
-	   $names = array_rand(array_flip($users['Names']['0']));
-   } else $names = array_rand(array_flip($users['Names']['1']));
+	   $names = array_rand(array_flip($users['Names']['males']));
+   } else $names = array_rand(array_flip($users['Names']['females']));
    $surnames = array_rand(array_flip($users['Surnames']));
 
   return 'Dear  ' . $gender. ' '. $names . ' ' . $surnames . '!';
