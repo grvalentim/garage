@@ -99,7 +99,7 @@ function convertYear($num = false)
 
 function cars($cars)
   {
-    $mark = array_rand($cars);
+    $mark = array_rand($cars); //comment-123
     $model = array_rand($cars[$mark]);
     $year = $cars[$mark][$model]['year'];
     return $mark." ".$model.", production year is ".convertYear($year);
@@ -120,5 +120,4 @@ function input($users, $cars, $garage) {
 	}
 	   }
 }
-
 input($users, $cars, $garage);
